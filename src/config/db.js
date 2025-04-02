@@ -6,7 +6,11 @@ dotenv.config();
 const { Pool } = pkg;
 
 const pool = new Pool({
-    connectionString : process.env.POSTGRES_URI
+    user: "postgres",
+    host: "localhost",
+    database: "url_shortener",
+    password: "ayushjain",
+    port: 5432,
 });
 
 pool.on("connect", () => console.log("✅ Connected to PostgreSQL"));
